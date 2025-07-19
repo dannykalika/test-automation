@@ -6,17 +6,6 @@
     "test": "",
     "prepare": "husky"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dannykalika/test-automation.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dannykalika/test-automation/issues"
-  },
-  "homepage": "https://github.com/dannykalika/test-automation#readme",
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.{js,ts,jsx,tsx,json,css,scss,md}": "prettier --write"
