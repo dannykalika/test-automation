@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Update User Response",
+  "description": "Schema for the response when a user is updated on Reqres.in API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the updated user."
+    },
+    "job": {
+      "type": "string",
+      "description": "The job of the updated user."
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the user was last updated."
+    }
+  },
+  "required": ["name", "job", "updatedAt"],
+  "additionalProperties": false
+}

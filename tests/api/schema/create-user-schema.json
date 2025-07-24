@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Create User Response",
+  "description": "Schema for the response when a user is created on Reqres.in API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the created user."
+    },
+    "job": {
+      "type": "string",
+      "description": "The job of the created user."
+    },
+    "id": {
+      "type": "string",
+      "description": "The unique ID assigned to the created user."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the user was created."
+    }
+  },
+  "required": ["name", "job", "id", "createdAt"],
+  "additionalProperties": false
+}

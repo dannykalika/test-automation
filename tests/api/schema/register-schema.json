@@ -1,0 +1,42 @@
+{
+  "$id": "https://example.com/reqres/register-combined-response.schema.json",
+  "title": "Register Combined Response",
+  "description": "Schema for the combined success or failure response from registering a user on reqres.in",
+  "oneOf": [
+    {
+      "$id": "https://example.com/reqres/register-success-response.schema.json",
+      "title": "Register Success Response",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The ID of the registered user.",
+          "minimum": 1
+        },
+        "token": {
+          "type": "string",
+          "description": "The authentication token for the registered user."
+        }
+      },
+      "required": ["id", "token"],
+      "additionalProperties": false
+    },
+    {
+      "$id": "https://example.com/reqres/register-failure-response.schema.json",
+      "title": "Register Failure Response",
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "description": "Description of the error.",
+          "enum": [
+            "Missing password",
+            "Note: Only defined users succeed registration"
+          ]
+        }
+      },
+      "required": ["error"],
+      "additionalProperties": false
+    }
+  ]
+}

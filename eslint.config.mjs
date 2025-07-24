@@ -12,6 +12,7 @@ export default defineConfig([
   tseslint.configs.recommended,
   {
     rules: {
+      "eol-last": ["error", "always"],
       eqeqeq: 2,
       "no-unused-vars": "error",
       "prefer-const": ["error", { ignoreReadBeforeAssign: true }],

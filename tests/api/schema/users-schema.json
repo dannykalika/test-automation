@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "List Users Response",
+  "description": "Schema for the response when listing users from Reqres.in API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "description": "The current page number.",
+      "minimum": 1
+    },
+    "per_page": {
+      "type": "integer",
+      "description": "Number of items per page.",
+      "minimum": 1
+    },
+    "total": {
+      "type": "integer",
+      "description": "Total number of items available.",
+      "minimum": 0
+    },
+    "total_pages": {
+      "type": "integer",
+      "description": "Total number of pages.",
+      "minimum": 1
+    },
+    "data": {
+      "type": "array",
+      "description": "An array of user objects.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique ID of the user.",
+            "minimum": 1
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address of the user."
+          },
+          "first_name": {
+            "type": "string",
+            "description": "First name of the user."
+          },
+          "last_name": {
+            "type": "string",
+            "description": "Last name of the user."
+          },
+          "avatar": {
+            "type": "string",
+            "format": "url",
+            "description": "URL to the user's avatar image."
+          }
+        },
+        "required": ["id", "email", "first_name", "last_name", "avatar"],
+        "additionalProperties": false
+      }
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL for support information."
+        },
+        "text": {
+          "type": "string",
+          "description": "Support message."
+        }
+      },
+      "required": ["url", "text"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["page", "per_page", "total", "total_pages", "data", "support"],
+  "additionalProperties": false
+}
