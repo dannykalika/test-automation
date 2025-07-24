@@ -3,6 +3,8 @@ name: Run Node.js API Tests On Demand
 on:
   pull_request:
     types: [ opened, reopened ]
+    branches:
+      - 'main'
   workflow_dispatch:
 
 jobs:
