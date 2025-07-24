@@ -34,6 +34,7 @@
     "ajv-formats": "^3.0.1",
     "chai": "^5.2.1",
     "chai-superagent": "^3.1.0",
+    "chromedriver": "^138.0.4",
     "dotenv": "^17.2.0",
     "superagent": "^10.2.3",
     "wdio-intercept-service": "^4.4.1",

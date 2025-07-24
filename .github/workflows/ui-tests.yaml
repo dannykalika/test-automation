@@ -11,7 +11,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: cry-inc/ubuntu-node-chrome-docker
+      image: node:lts-slim
 
     steps:
       - name: Checkout code
