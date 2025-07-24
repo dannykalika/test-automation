@@ -1,0 +1,28 @@
+name: Run Node.js UI Tests On Demand
+
+on:
+  pull_request:
+    types: [ opened, reopened ]
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: cry-inc/ubuntu-node-chrome-docker
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run Node.js tests
+        env:
+          user_name: ${{ secrets.user_name }}
+          password: ${{ secrets.password }}
+          test_url: 'http://uitestingplayground.com'
+        run: npm run test:ui

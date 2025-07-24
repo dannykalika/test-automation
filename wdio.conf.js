@@ -52,6 +52,15 @@ export const config = {
   capabilities: [
     {
       browserName: "chrome",
+      "goog:chromeOptions": {
+        args: [
+          "--headless=new",
+          "--disable-gpu",
+          "--window-size=1920,1080",
+          "--no-sandbox",
+          "--disable-dev-shm-usage",
+        ],
+      },
     },
   ],
 
