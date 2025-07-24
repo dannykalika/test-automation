@@ -11,7 +11,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: node:lts-slim
+      image: selenoid/chrome:latest
 
     steps:
       - name: Checkout code
