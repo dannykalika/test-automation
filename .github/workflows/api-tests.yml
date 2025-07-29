@@ -1,4 +1,4 @@
-name: Run Node.js API Tests On Demand
+name: API Tests
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run Node.js tests
+      - name: Run API tests
         env:
           api_key: ${{ secrets.api_key }}
           test_url: 'https://reqres.in/api'

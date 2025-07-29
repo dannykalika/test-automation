@@ -1,4 +1,4 @@
-name: Run Node.js UI Tests On Demand
+name: Accessibility Tests
 
 on:
   pull_request:
@@ -20,9 +20,5 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run Node.js tests
-        env:
-          user_name: ${{ secrets.user_name }}
-          password: ${{ secrets.password }}
-          test_url: 'http://uitestingplayground.com'
-        run: npm run test:ui
+      - name: Run accessibility tests
+        run: npm run test:a11y
