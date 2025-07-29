@@ -14,3 +14,13 @@ The automation framework used for running these UI tests is WebdriverIO.
 Test cases are created using Mocha, paired with chaijs for extended assertions.
 Each test case is written in gherkin syntax to help with readability
 and consistency.
+
+### How to run
+
+You must define environment variables in a `.env` file or otherwise.
+The variables needed are `test_url`, `user_name` and `password`.
+The `test_url` should be "http://uitestingplayground.com" and you can feel free to use
+"tester" and "pwd" respectively or whatever you prefer for the `user_name` and `password`.
+
+- `npm install`
+- `npm run test:ui`

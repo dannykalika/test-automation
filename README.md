@@ -6,14 +6,16 @@ the test execution and results in the `Actions` tab of this repository.
 In this project I am not aiming for "full" test coverage of the public testing services
 but rather to show how these pieces of software can be tested and how to do so (using NodeJS).
 I will also be following and enforcing the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary)
-standard as I find this to be a good practice.
+standard as I find that to be good practice.
 
-Further details on the UI tests can be found [here](./tests/ui/README.md).
+Further details on tests can be found here:
 
-Further details on the API tests can be found [here](./tests/api/README.md).
+- [UI Tests](./tests/ui/README.md)
+- [API Tests](./tests/api/README.md)
+- [Accessibility Tests](./tests/accessibility/README.md)
 
-I will include some load, accessibility, visual and web performance tests
+I will include some load, visual and web performance test examples
 as I find public resources to use.
 
-Thanks for reviewing my project! I hope that you have learned something
-and I will greatly appreciate any tips or feedback!
+Thanks for reviewing my project! I hope that you have learned something,
+and I greatly appreciate any tips or feedback!

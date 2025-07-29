@@ -14,3 +14,13 @@ validate returned data by following a standard(schema) without additional test c
 Test cases are created using Mocha, paired with chaijs & chai-superagent for extended assertions.
 Each test case is written in gherkin syntax to help with readability
 and consistency.
+
+### How to run
+
+You must define environment variables in a `.env` file or otherwise.
+The variables needed are `test_url` and `api_key`.
+The `test_url` should be "https://reqres.in/api" and while the `api_key` is free
+and not sensitive in nature - I request you obtain it from reqres.in.
+
+- `npm install`
+- `npm run test:api`
