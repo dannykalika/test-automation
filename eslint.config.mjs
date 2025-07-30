@@ -26,6 +26,7 @@ export default defineConfig([
         after: "readonly",
         afterEach: "readonly",
         it: "readonly",
+        __ENV: "readonly"
       },
     }
   }

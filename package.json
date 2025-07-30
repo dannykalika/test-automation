@@ -7,6 +7,7 @@
     "test:ui": "npm run wdio",
     "test:api": "mocha --spec 'tests/api/specs/*spec.js'",
     "test:a11y": "wdio ./tests/accessibility/a11y.wdio.conf.js",
+    "test:load": "k6 run tests/load/load-test.js",
     "prepare": "husky",
     "wdio": "wdio run ./wdio.conf.js"
   },

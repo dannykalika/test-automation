@@ -14,7 +14,7 @@ Further details on tests can be found here:
 - [API Tests](./tests/api/README.md)
 - [Accessibility Tests](./tests/accessibility/README.md)
 
-I will include some load, visual and web performance test examples
+I will include some visual and web performance test examples
 as I find public resources to use.
 
 Thanks for reviewing my project! I hope that you have learned something,
