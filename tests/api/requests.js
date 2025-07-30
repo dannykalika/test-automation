@@ -2,10 +2,10 @@ import request from "superagent";
 import "dotenv/config";
 import { ajv } from "./validation.js";
 
-const test_url = process.env.test_url;
+const test_url = process.env.TEST_URL;
 
 export async function headers() {
-  return { "x-api-key": process.env.api_key };
+  return { "x-api-key": process.env.API_KEY };
 }
 
 export async function validate(schemaName, body) {

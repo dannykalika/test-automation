@@ -22,6 +22,6 @@ jobs:
 
       - name: Run API tests
         env:
-          api_key: ${{ secrets.api_key }}
-          test_url: 'https://reqres.in/api'
+          API_KEY: ${{ secrets.API_KEY }}
+          TEST_URL: 'https://reqres.in/api'
         run: npm run test:api

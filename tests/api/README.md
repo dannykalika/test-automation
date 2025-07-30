@@ -18,8 +18,8 @@ and consistency.
 ### How to run
 
 You must define environment variables in a `.env` file or otherwise.
-The variables needed are `test_url` and `api_key`.
-The `test_url` should be "https://reqres.in/api" and while the `api_key` is free
+The variables needed are `TEST_URL` and `API_KEY`.
+The `TEST_URL` should be "https://reqres.in/api" and while the `API_KEY` is free
 and not sensitive in nature - I request you obtain it from reqres.in.
 
 - `npm install`

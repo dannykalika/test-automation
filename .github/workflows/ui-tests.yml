@@ -22,7 +22,7 @@ jobs:
 
       - name: Run UI tests
         env:
-          user_name: ${{ secrets.user_name }}
-          password: ${{ secrets.password }}
-          test_url: 'http://uitestingplayground.com'
+          USER_NAME: ${{ secrets.USER_NAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          TEST_URL: 'http://uitestingplayground.com'
         run: npm run test:ui

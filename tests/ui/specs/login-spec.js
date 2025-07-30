@@ -9,8 +9,8 @@ describe("UI Testing Playground", () => {
     describe("Given: the user is on a login page", () => {
       describe("When: the user enters valid credentials", () => {
         // hardcoded credentials as they are not sensitive for this sample app
-        const userName = process.env.username || "tester";
-        const password = process.env.password || "pwd";
+        const userName = process.env.USERNAME || "tester";
+        const password = process.env.PASSWORD || "pwd";
         it("Then: the user should be logged in", async () => {
           await LoginPage.userNameField.waitForDisplayed();
           await LoginPage.userNameField.setValue(userName);
