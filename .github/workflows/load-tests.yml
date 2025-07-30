@@ -10,8 +10,6 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-    container:
-      image: grafana/k6
 
     steps:
       - name: Checkout code
