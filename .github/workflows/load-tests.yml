@@ -17,7 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+
       - name: Run load tests
+        uses: grafana/run-k6-action@v1
         env:
           HOST: 'https://quickpizza.grafana.com'
-        run: k6 run tests/load/load-test.js -e USER_NAME=${{ secrets.K6_USER_NAME }} -e PASSWORD=${{ secrets.K6_PASSWORD }}
+          USER_NAME: ${{ secrets.K6_USER_NAME }}
+          PASSWORD: ${{ secrets.K6_PASSWORD }}
+        with:
+          path: |
+            ./tests/load/load-test.js
