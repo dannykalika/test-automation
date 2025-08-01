@@ -1,0 +1,1 @@
+{"uuid":"c97feb71-edc5-475f-ad0c-684dd7bf037d","children":["eb2a4349-1892-4a32-90db-9abc86f6ef9a"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Text Input: Given: the user is on a page where sending text via DOM events do not work: When: the user emulates real keyboard input"}

@@ -28,6 +28,12 @@ export default defineConfig([
         it: "readonly",
         __ENV: "readonly"
       },
-    }
+    },
+  },
+  {
+    ignores: [
+      "allure-results/",
+      "allure-report/",
+    ]
   }
 ]);

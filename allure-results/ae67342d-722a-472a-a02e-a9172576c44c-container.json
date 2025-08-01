@@ -1,0 +1,1 @@
+{"uuid":"ae67342d-722a-472a-a02e-a9172576c44c","children":["fd973a09-7b6d-49df-9fd6-fdb35636e860"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Click: Given: the user is on a page where event based clicks do not work: When: the user does a physical mouse click"}

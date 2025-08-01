@@ -1,0 +1,1 @@
+{"uuid":"abef75cc-ece7-49f8-bee5-6f8e5a4cc922","children":["e47f5daf-8084-43a7-84bc-65b6d9d35e59","616dd15a-74f5-45f5-88dc-891abba58ce3"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Inner Text: Given: the user is on a page where there is inner text: When: the user wants to validate the inner text of an element"}

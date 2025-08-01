@@ -140,3 +140,7 @@ vite.config.ts.timestamp-*
 
 # IDE files
 .idea
+
+# Allure report files
+/allure-report
+/allure-results
