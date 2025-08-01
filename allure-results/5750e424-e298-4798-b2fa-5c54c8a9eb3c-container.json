@@ -1,1 +1,0 @@
-{"uuid":"5750e424-e298-4798-b2fa-5c54c8a9eb3c","children":["a3096398-d172-443e-8be1-8dd6bf4ea10d"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Hidden layers: Given: the user is on a page where elements are cached: When: the user wants to interact with a cached element"}

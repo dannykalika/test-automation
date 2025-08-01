@@ -1,1 +1,0 @@
-{"uuid":"b4f496bf-dafa-4b2b-baaf-8df22169d95a","children":["ad092864-df1e-4a86-babe-17c18f040da3"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Disabled Input: Given: the user is on a page where inputs can be disabled: When: the user wants to interact with a disabled input"}

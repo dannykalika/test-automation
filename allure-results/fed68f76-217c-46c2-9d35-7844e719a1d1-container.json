@@ -1,1 +1,0 @@
-{"uuid":"fed68f76-217c-46c2-9d35-7844e719a1d1","children":["98652826-1496-4ded-aac0-764280aa7f0a"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: AJAX request: Given: the user is on a page where AJAX requests are needed: When: the user triggers an AJAX request on the page"}

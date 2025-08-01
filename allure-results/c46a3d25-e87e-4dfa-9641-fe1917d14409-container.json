@@ -1,1 +1,0 @@
-{"uuid":"c46a3d25-e87e-4dfa-9641-fe1917d14409","children":["33157bfc-169e-4b01-b5ee-7b4cef235204"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Non-Breaking space: Given: the user is on a page where non-breaking space is used: When: the user wants to reference an element using nbsp"}

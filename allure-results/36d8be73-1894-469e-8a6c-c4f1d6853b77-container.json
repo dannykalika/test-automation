@@ -1,1 +1,0 @@
-{"uuid":"36d8be73-1894-469e-8a6c-c4f1d6853b77","children":["b09f6c6f-1149-48ba-b15e-a5a2316f21ec"],"befores":[],"afters":[],"name":"UI Testing Playground: Scenario: Overlapped elements: Given: the user is on a page where an element is overlapped: When: the user brings the overlapped element into view"}
