@@ -14,10 +14,6 @@ module.exports = {
     recursive: true,
     bail: false,
     retries: 0,
-    reporter: 'allure-mocha',
-    'reporter-options': [
-        'resultsDir=allure-results'
-    ],
     diff: true,
     exit: true,
     parallel: true,

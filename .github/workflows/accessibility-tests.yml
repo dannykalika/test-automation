@@ -22,23 +22,3 @@ jobs:
 
       - name: Run accessibility tests
         run: npm run test:a11y
-
-      - name: Generate report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        continue-on-error: true
-        id: allure-report
-        with:
-          allure_results: allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
-          allure_history: allure-history
-
-      - name: Deploy report to Github Pages
-        if: always()
-        continue-on-error: true
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
