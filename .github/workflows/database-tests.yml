@@ -1,0 +1,30 @@
+name: Database Tests
+
+on:
+  pull_request:
+    types: [ opened, reopened ]
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: node:lts-slim
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run API tests
+        env:
+          DB: 'pfmegrnargs'
+          DB_HOST: 'hh-pgsql-public.ebi.ac.uk'
+          DB_USER: ${{ secrets.RNACENTRAL_USER }}
+          DB_PASSWORD: ${{ secrets.RNACENTRAL_PASSWORD }}
+          DB_PORT: '5432'
+        run: npm run test:data
