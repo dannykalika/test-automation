@@ -20,7 +20,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run API tests
+      - name: Run Database tests
         env:
           DB: 'pfmegrnargs'
           DB_HOST: 'hh-pgsql-public.ebi.ac.uk'
