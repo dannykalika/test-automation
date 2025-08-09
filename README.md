@@ -3,8 +3,9 @@
 This project is to showcase examples of automated software testing.
 I will aim to include GitHub workflows for each set of tests so you may view
 the test execution and results in the `Actions` tab of this repository.
-In this project I am not aiming for "full" test coverage of the public testing services
-but rather to show how these pieces of software can be tested and how to do so (using Node.js, with the exception k6 load testing).
+In this project I am not aiming for "full" test coverage of the public testing services.
+Instead, I'm aiming to show how these pieces of software can be tested and how to do so
+(using Node.js, with the exceptions of k6 load testing and sitespeed.io).
 I will also be following and enforcing the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary)
 standard as I find that to be good practice.
 
@@ -15,9 +16,7 @@ Further details on tests can be found here:
 - [Accessibility Tests](./tests/accessibility/README.md)
 - [Load Tests](./tests/load/README.md)
 - [Database Tests](./tests/data/README.md)
-
-I will include some visual and web performance test examples
-as I find public resources to use.
+- [Web Performance Tests](./tests/web-performance/README.md)
 
 Thanks for reviewing my project! I hope that you have learned something,
 and I greatly appreciate any tips or feedback!

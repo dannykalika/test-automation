@@ -11,7 +11,8 @@
     "test:data": "mocha --config data.mocharc.cjs",
     "prepare": "husky",
     "wdio": "wdio run wdio.conf.mjs",
-    "allure": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+    "allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "sitespeed": "bash tests/web-performance/performance-check.sh"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
@@ -45,6 +46,7 @@
     "chai-superagent": "^3.1.0",
     "dotenv": "^17.2.0",
     "pg": "^8.16.3",
+    "sitespeed.io": "^38.1.2",
     "superagent": "^10.2.3",
     "wdio-intercept-service": "^4.4.1",
     "wdio-wait-for": "^3.1.0"

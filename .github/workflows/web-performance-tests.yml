@@ -1,0 +1,24 @@
+name: Web Performance Tests
+
+on:
+  pull_request:
+    types: [ opened, reopened ]
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node-22.18.0-chrome-139.0.7258.66-1-ff-141.0.3-edge-138.0.3351.121-1
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run web performance tests
+        run: npm run sitespeed
