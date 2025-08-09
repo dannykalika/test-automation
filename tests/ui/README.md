@@ -9,7 +9,6 @@ instead showcasing what we can achieve with automation.
 
 ### What am I using?
 
-This project is purely using NodeJS/Javascript.
 The automation framework used for running these UI tests is WebdriverIO.
 Test cases are created using Mocha, paired with chaijs for extended assertions.
 Each test case is written in gherkin syntax to help with readability

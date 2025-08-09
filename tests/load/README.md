@@ -1,12 +1,12 @@
 ### What am I testing?
 
-I am generating a ramping load test against https://quickpizza.grafana.com
+I am generating a small ramping load test (up to 300 iterations) against https://quickpizza.grafana.com,
 which is a shared testing environment. Specifically, we're generating a load
 against the login endpoint with the following thresholds:
 
 - Response body length should be at least 10 characters
-- Should more than 5% of response status be 4XX or 5XX the test run will abort
-- 95% of requests should be below 200ms
+- Should more than 5% of response status be 4XX or 5XX, the test run will abort
+- 95% of requests should be below 200 ms
 
 ### What am I using?
 
@@ -20,4 +20,3 @@ in JavaScript. However, k6 is not built upon Node.js.
   - `export USER_NAME="yourusername"`
   - `export PASSWORD="yourpassword"`
 - `npm run test:load`
--
