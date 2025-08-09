@@ -16,7 +16,7 @@ while IFS= read -r url; do
     echo "Running Sitespeed.io for: $url"
     echo '--------------------------------------------------------'
 
-    sitespeed.io "$url"  --browser chrome -n 5 --headless --budget.configPath tests/web-performance/budget.json
+    npx sitespeed.io "$url"  --browser chrome -n 5 --headless --budget.configPath tests/web-performance/budget.json
 
     if [ $? -ne 0 ]; then
         echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'

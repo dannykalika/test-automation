@@ -18,6 +18,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run web performance tests
-        run: |
-          chmod +x tests/web-performance/performance-check.sh
-          ./tests/web-performance/performance-check.sh
+        run: npm run sitespeed
