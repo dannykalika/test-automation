@@ -16,7 +16,13 @@ while IFS= read -r url; do
     echo "Running Sitespeed.io for: $url"
     echo '--------------------------------------------------------'
 
-    sitespeed.io "$url"  --browser chrome -n 5 --headless --budget.configPath tests/web-performance/budget.json
+    sitespeed.io "$url"  --browser chrome -n 5 --headless --budget.configPath tests/web-performance/budget.json --browsertime.chrome.cleanUserDataDir true
+
+    if [ $? -ne 0 ]; then
+        echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+        echo "Budget failure detected for $url! See the report for details."
+        echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+    fi
 
     sleep 5
 
