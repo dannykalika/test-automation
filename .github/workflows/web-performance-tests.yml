@@ -11,14 +11,13 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node-22.18.0-chrome-139.0.7258.66-1-ff-141.0.3-edge-138.0.3351.121-1
+      image: sitespeed.io/sitespeed.io:25.0.0
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Node.js dependencies
-        run: npm install
-
       - name: Run web performance tests
-        run: npm run sitespeed
+        run: |
+          chmod +x tests/web-performance/performance-check.sh
+          ./tests/web-performance/performance-check.sh
