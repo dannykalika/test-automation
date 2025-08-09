@@ -11,7 +11,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: sitespeed.io/sitespeed.io:25.0.0
+      image: sitespeedio/sitespeed.io:38.1.1
 
     steps:
       - name: Checkout code
