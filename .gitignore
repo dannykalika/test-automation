@@ -147,6 +147,3 @@ vite.config.ts.timestamp-*
 
 # Sitespeed results
 /sitespeed-result
-
-# Package lock
-package-lock.json
