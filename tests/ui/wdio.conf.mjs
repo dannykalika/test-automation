@@ -4,7 +4,7 @@ import { mainConfig } from '../../main.wdio.conf.mjs';
 export const config = {
     ...mainConfig,
     runner: 'local',
-    specs: ['./validate-spec.js'],
+    specs: ['./specs/**/*-spec.js'],
     capabilities: [
         {
             browserName: 'chrome',
@@ -19,8 +19,16 @@ export const config = {
             },
         },
     ],
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 120000,
-    },
+    services: ['intercept'],
+    reporters: [
+        'spec',
+        [
+            'allure',
+            {
+                outputDir: 'allure-results',
+                disableWebdriverStepsReporting: true,
+                disableWebdriverScreenshotsReporting: true
+            },
+        ],
+    ],
 };
