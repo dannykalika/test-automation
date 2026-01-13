@@ -23,5 +23,5 @@
     }
   },
   "required": ["name", "job", "id", "createdAt"],
-  "additionalProperties": false
+  "additionalProperties": true
 }

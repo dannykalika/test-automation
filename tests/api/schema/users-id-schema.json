@@ -35,7 +35,7 @@
             }
           },
           "required": ["id", "email", "first_name", "last_name", "avatar"],
-          "additionalProperties": false
+          "additionalProperties": true
         },
         "support": {
           "type": "object",
@@ -51,11 +51,41 @@
             }
           },
           "required": ["url", "text"],
-          "additionalProperties": false
+          "additionalProperties": true
+        },
+        "_meta": {
+          "type": "object",
+          "properties": {
+            "powered_by": { "type": "string" },
+            "docs_url": { "type": "string", "format": "uri" },
+            "upgrade_url": { "type": "string", "format": "uri" },
+            "example_url": { "type": "string", "format": "uri" },
+            "variant": { "type": "string" },
+            "message": { "type": "string" },
+            "cta": {
+              "type": "object",
+              "required": ["label", "url"],
+              "properties": {
+                "label": { "type": "string" },
+                "url": { "type": "string", "format": "uri" }
+              }
+            },
+            "context": { "type": "string" }
+          },
+          "required": [
+            "powered_by",
+            "docs_url",
+            "upgrade_url",
+            "example_url",
+            "variant",
+            "message",
+            "cta",
+            "context"
+          ]
         }
       },
-      "required": ["data", "support"],
-      "additionalProperties": false
+      "required": ["data", "support", "_meta"],
+      "additionalProperties": true
     },
     {
       "title": "Error Response (404 Not Found - Empty Object)",

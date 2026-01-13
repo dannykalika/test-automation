@@ -55,7 +55,7 @@
           }
         },
         "required": ["id", "email", "first_name", "last_name", "avatar"],
-        "additionalProperties": false
+        "additionalProperties": true
       }
     },
     "support": {
@@ -72,9 +72,9 @@
         }
       },
       "required": ["url", "text"],
-      "additionalProperties": false
+      "additionalProperties": true
     }
   },
   "required": ["page", "per_page", "total", "total_pages", "data", "support"],
-  "additionalProperties": false
+  "additionalProperties": true
 }
