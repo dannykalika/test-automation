@@ -19,7 +19,7 @@
         }
       },
       "required": ["id", "token"],
-      "additionalProperties": false
+      "additionalProperties": true
     },
     {
       "$id": "https://example.com/reqres/register-failure-response.schema.json",

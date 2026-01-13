@@ -19,5 +19,5 @@
     }
   },
   "required": ["name", "job", "updatedAt"],
-  "additionalProperties": false
+  "additionalProperties": true
 }

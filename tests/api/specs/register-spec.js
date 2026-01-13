@@ -25,6 +25,7 @@ describe("Reqres API", () => {
             await Requests.headers(),
           );
           await expect(res).to.have.status(400);
+          await expect(res.body).to.include({ error: "Missing password" });
         });
       });
       describe("When: a non defined user is entered", () => {
@@ -34,6 +35,9 @@ describe("Reqres API", () => {
             await Requests.headers(),
           );
           await expect(res).to.have.status(400);
+          await expect(res.body).to.include({
+            error: "Note: Only defined users succeed registration",
+          });
         });
       });
     });

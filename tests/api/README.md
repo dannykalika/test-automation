@@ -3,7 +3,7 @@
 ### What am I testing?
 
 These tests are designed to validate some of the reqres.in endpoints.
-Reqres.in is a free public API that anyone can get an API key for.
+Reqres.in provides a free legacy API that anyone can get an API key for.
 
 ### What am I using?
 
@@ -18,8 +18,8 @@ and consistency.
 
 You must define environment variables in a `.env` file or otherwise.
 The variables needed are `TEST_URL` and `API_KEY`.
-The `TEST_URL` should be "https://reqres.in/api" and while the `API_KEY` is free
-and not sensitive in nature - I request you to get it from reqres.in.
+The `TEST_URL` should be "https://reqres.in/api" and you will need to
+request a free `API_KEY` from reqres.in.
 
 - `npm install`
 - `npm run test:api`
