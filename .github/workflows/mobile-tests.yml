@@ -11,6 +11,10 @@ jobs:
   android-tests:
     runs-on: macos-latest
 
+    env:
+      ANDROID_HOME: /Users/runner/Library/Android/sdk
+      ANDROID_COMMANDLINE_TOOLS: /Users/runner/Library/Android/sdk/cmdline-tools/latest/bin
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -31,7 +35,9 @@ jobs:
           java-version: '17'
 
       - name: Accept Android SDK Licenses
-        run: yes | sdkmanager --licenses
+        run: |
+          echo "${{ env.ANDROID_COMMANDLINE_TOOLS }}" >> $GITHUB_PATH
+          yes | ${{ env.ANDROID_COMMANDLINE_TOOLS }}/sdkmanager --licenses
 
       - name: Run Appium Tests on Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
