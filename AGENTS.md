@@ -3,13 +3,13 @@
 ## Quick Start
 
 - **Type**: Node.js test automation framework
-- **Entry scripts**: `npm run test:ui`, `npm run test:api`, `npm run test:a11y`, `npm run test:load`, `npm run test:data`
+- **Entry scripts**: `npm run test:ui`, `npm run test:api`, `npm run test:a11y`, `npm run test:android`, `npm run test:load`, `npm run test:data`
 - **Config files**: Root `.env` required with `TEST_URL`, `USERNAME`, `PASSWORD`, `API_KEY`
 - **Package manager**: npm with ES6 module support (`"type": "module"` in package.json)
 
 ## Architecture Overview
 
-This is a **multi-framework test automation project** showcasing 6 distinct testing approaches:
+This is a **multi-framework test automation project** showcasing 7 distinct testing approaches:
 
 ### Test Types & Their Patterns
 
@@ -40,6 +40,15 @@ This is a **multi-framework test automation project** showcasing 6 distinct test
 
 6. **Web Performance** (`tests/web-performance/`) - bash script + sitespeed.io
 
+7. **Mobile Tests** (`tests/mobile/`) - WebdriverIO + Appium + Mocha
+   - **Configuration**: `mobile.wdio.conf.mjs` (separate config, managed by wdio-appium-service)
+   - **Framework**: Appium with UiAutomator2 driver for Android
+   - **Page Object Model**: Same singleton pattern as UI tests, `MobileLoginPage` extends no base (Android-specific selectors)
+   - **Test structure**: Gherkin-style (Given-When-Then) in nested `describe` blocks
+   - **Selector syntax**: App accessibility IDs using `~` prefix (e.g., `$('~Username input field')`), XPath for complex queries
+   - **Setup**: Requires Android Studio emulator, Appium running on localhost:4723
+   - **Dependencies**: `appium`, `appium-uiautomator2-driver`, `@wdio/appium-service`
+
 ## Code Quality & Conventions
 
 ### Linting & Formatting
@@ -63,6 +72,7 @@ This is a **multi-framework test automation project** showcasing 6 distinct test
 npm run test:ui      # WebdriverIO UI tests (headless Chrome)
 npm run test:api     # API tests with schema validation (parallel)
 npm run test:a11y    # Accessibility tests
+npm run test:android # Appium mobile tests (Android emulator)
 npm run test:load    # K6 load tests
 npm run test:data    # Database tests
 npm run wdio         # Direct WebdriverIO (bypasses npm script)
@@ -73,6 +83,7 @@ npm run sitespeed    # Web performance check
 ### Test Execution Details
 
 - **UI Tests**: 10 parallel instances (maxInstances in wdio.conf.mjs), 60s timeout per test
+- **Mobile Tests**: 1 instance only (single emulator, maxInstances in mobile.wdio.conf.mjs), 60s timeout, requires Appium server running
 - **API Tests**: Parallel execution enabled, 5s timeout, 1s slow threshold
 - **Allure reporting**: Automatically collected for WebdriverIO tests in `allure-results/`
 
@@ -127,6 +138,15 @@ TEST_URL=https://reqres.in/api           # For API tests (overwrites above or us
 - **Driver**: PostgreSQL via `pg` package
 - **Connection**: Likely configured via env vars (check `tests/data/rnacentral-spec.js`)
 
+### Mobile Testing
+
+- **Framework**: Appium with UiAutomator2 driver for Android
+- **Service**: `@wdio/appium-service` manages Appium server lifecycle
+- **Emulator**: Android Studio emulator required, launched before test execution
+- **Connection**: Appium server runs on `127.0.0.1:4723` (localhost unavailable on some systems)
+- **App**: SauceLabs demo APK (`tests/mobile/com.saucelabs.mydemoapp.rn.apk`) includes pre-configured test credentials
+- **Selectors**: Accessibility IDs (`~element-id`) used for stability, XPath as fallback
+
 ## When Adding New Tests
 
 ### UI Test Checklist
@@ -152,11 +172,24 @@ TEST_URL=https://reqres.in/api           # For API tests (overwrites above or us
 2. Use `new AxeBuilder(browser).analyze()` pattern
 3. Run with `npm run test:a11y` (uses accessibility-specific config)
 
+### Mobile Test Checklist
+
+1. Create `tests/mobile/specs/<feature>-spec.js`
+2. Create page object in `tests/mobile/pages/<feature>-page.js` using singleton pattern
+3. Import page object in spec file
+4. Structure with nested describes (Given-When-Then)
+5. Use app accessibility IDs with `~` prefix (e.g., `$('~element id')`) for stable selectors
+6. Use XPath for complex queries or elements without accessibility IDs
+7. Include `waitForDisplayed({ timeout: 10000 })` before assertions
+8. Ensure Android emulator is running: `emulator -avd <emulator_name>`
+9. Appium server must be running on `127.0.0.1:4723` (started automatically by wdio-appium-service)
+
 ## Critical Files Not To Miss
 
 | File                      | Purpose                                                                               |
 | ------------------------- | ------------------------------------------------------------------------------------- |
 | `wdio.conf.mjs`           | Main WebdriverIO config - 315 lines, defines capabilities, timeouts, hooks, reporters |
+| `mobile.wdio.conf.mjs`    | Mobile WebdriverIO config - Appium service, Android emulator setup, maxInstances: 1   |
 | `tests/api/requests.js`   | All HTTP request abstractions with validation - must update when adding API endpoints |
 | `tests/api/validation.js` | AJV schema registry - must register schemas here before validation calls              |
 | `.env`                    | Runtime configuration - local only, never commit                                      |
@@ -175,7 +208,9 @@ TEST_URL=https://reqres.in/api           # For API tests (overwrites above or us
 
 - ✅ **Add new test specs** - `tests/*/specs/*` (safe to add, linted automatically)
 - ✅ **Add page objects** - `tests/ui/page-objects/*` (follow inheritance pattern)
+- ✅ **Add mobile page objects** - `tests/mobile/pages/*` (follow singleton pattern with accessibility IDs)
 - ✅ **Add API schemas** - `tests/api/schema/*.json` (register in validation.js)
 - ⚠️ **Modify `requests.js`** - Central to API tests, validate error handling
 - ⚠️ **Modify `wdio.conf.mjs`** - Affects all UI tests, understand hook system
+- ⚠️ **Modify `mobile.wdio.conf.mjs`** - Affects mobile tests, Appium service configuration critical
 - ⚠️ **Modify config files** - Changes affect all test execution

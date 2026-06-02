@@ -147,3 +147,5 @@ vite.config.ts.timestamp-*
 
 # Sitespeed results
 /sitespeed-result
+
+.DS_Store
