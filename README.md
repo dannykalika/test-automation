@@ -17,6 +17,7 @@ Further details on tests can be found here:
 - [Load Tests](./tests/load/README.md)
 - [Database Tests](./tests/data/README.md)
 - [Web Performance Tests](./tests/web-performance/README.md)
+- [Mobile Tests](./tests/mobile/README.md)
 
 Thanks for reviewing my project! I hope that you have learned something,
 and I greatly appreciate any tips or feedback!
