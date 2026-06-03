@@ -9,7 +9,7 @@ on:
 
 jobs:
   android-tests:
-    runs-on: macos-13
+    runs-on: macos-15-intel
 
     env:
       ANDROID_HOME: /Users/runner/Library/Android/sdk
